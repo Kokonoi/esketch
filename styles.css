@@ -1,9 +1,11 @@
 body {
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
   display: flex;
   height: 100vh;
   flex-direction: column;
   margin: 0px;
   justify-content: space-between;
+  background-color: RGB(209, 209, 209);
 }
 
 h1 {
