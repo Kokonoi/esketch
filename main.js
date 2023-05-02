@@ -60,6 +60,11 @@ function getRandomColor() {
   return color;
 }
 
+// function clearDivs() {
+//   let divs = document.querySelectorAll("#sketch > div");
+//   divs.setAttribute("style", "background-color: white;");
+// }
+
 firstButton.addEventListener("click", () => {
   setEight();
 });
@@ -70,4 +75,8 @@ secondButton.addEventListener("click", () => {
 
 thirdButton.addEventListener("click", () => {
   setThirtytwo();
+});
+
+clearButton.addEventListener("click", () => {
+  clearDivs();
 });
