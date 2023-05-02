@@ -60,10 +60,12 @@ function getRandomColor() {
   return color;
 }
 
-// function clearDivs() {
-//   let divs = document.querySelectorAll("#sketch > div");
-//   divs.setAttribute("style", "background-color: white;");
-// }
+function clearDivs() {
+  let divs = document.querySelectorAll("#sketch > div");
+  for (let i = 0; i < divs.length; i++) {
+    divs[i].style.backgroundColor = "white";
+  }
+}
 
 firstButton.addEventListener("click", () => {
   setEight();
