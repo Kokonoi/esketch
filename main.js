@@ -7,6 +7,8 @@ const blackButton = document.querySelector(".btn4");
 const rbgButton = document.querySelector(".btn5");
 const clearButton = document.querySelector(".btn6");
 
+setDefault();
+
 function setDefault() {
   // 16x16=265 => i must be defined this way so the squares take all the space
   divContainer.replaceChildren();
