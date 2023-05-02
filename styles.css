@@ -1,0 +1,15 @@
+h1 {
+  text-align: center;
+}
+.container {
+  display: flex;
+  width: 432px;
+  flex-wrap: wrap;
+  margin: auto;
+}
+
+.container > div {
+  width: 25px;
+  height: 25px;
+  border: 1px solid black;
+}
