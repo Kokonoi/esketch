@@ -7,11 +7,10 @@ h1 {
   height: 400px;
   flex-wrap: wrap;
   margin: auto;
+  overflow: hidden;
 }
 
 .container > div {
-  flex-grow: 1;
-  flex-shrink: 1;
   width: 25px;
   height: 25px;
   border: 1px solid black;
