@@ -3,13 +3,17 @@ h1 {
 }
 .container {
   display: flex;
-  width: 432px;
+  width: 400px;
+  height: 400px;
   flex-wrap: wrap;
   margin: auto;
 }
 
 .container > div {
+  flex-grow: 1;
+  flex-shrink: 1;
   width: 25px;
   height: 25px;
   border: 1px solid black;
+  box-sizing: border-box;
 }
