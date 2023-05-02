@@ -77,6 +77,10 @@ thirdButton.addEventListener("click", () => {
   setThirtytwo();
 });
 
+rbgButton.addEventListener("click", () => {
+  setRGB();
+});
+
 clearButton.addEventListener("click", () => {
   clearDivs();
 });
