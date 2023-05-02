@@ -9,46 +9,58 @@ const clearButton = document.querySelector(".btn6");
 
 setDefault();
 
-function setDefault() {
+function setDefault(color = "black") {
   // 16x16=265 => i must be defined this way so the squares take all the space
   divContainer.replaceChildren();
   for (let i = 0; i < 256; i++) {
     let div = document.createElement("div");
+    div.setAttribute("style", `background-color: white;`);
     div.addEventListener("mouseover", () => {
-      div.setAttribute("style", "background-color: black");
+      div.setAttribute("style", `background-color: ${color};`);
     });
     divContainer.appendChild(div);
   }
 }
 
-function setEight() {
+function setEight(color = "black") {
   divContainer.replaceChildren();
   for (let i = 0; i < 64; i++) {
     let div = document.createElement("div");
-    div.setAttribute("style", "width:50px; height:50px");
+    div.setAttribute(
+      "style",
+      "width:50px; height:50px; background-color: white;"
+    );
     div.addEventListener("mouseover", () => {
       div.setAttribute(
         "style",
-        "background-color: black; width:50px; height:50px"
+        `background-color: ${color}; width:50px; height:50px`
       );
     });
     divContainer.appendChild(div);
   }
 }
 
-function setThirtytwo() {
+function setThirtytwo(color = "black") {
   divContainer.replaceChildren();
   for (let i = 0; i < 1024; i++) {
     let div = document.createElement("div");
-    div.setAttribute("style", "width:12.5px; height:12.5px");
+    div.setAttribute(
+      "style",
+      "width:12.5px; height:12.5px; background-color: white;"
+    );
     div.addEventListener("mouseover", () => {
       div.setAttribute(
         "style",
-        "background-color: black;width:12.5px; height:12.5px;"
+        `background-color: ${color};;width:12.5px; height:12.5px;`
       );
     });
     divContainer.appendChild(div);
   }
+}
+
+function setRGB() {
+  let color = getRandomColor();
+  return color;
 }
 
 function getRandomColor() {
@@ -79,8 +91,10 @@ thirdButton.addEventListener("click", () => {
   setThirtytwo();
 });
 
+blackButton.addEventListener("click", () => {});
+
 rbgButton.addEventListener("click", () => {
-  setRGB();
+  setDefault(setRGB());
 });
 
 clearButton.addEventListener("click", () => {
