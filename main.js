@@ -11,6 +11,7 @@ setDefault();
 
 function setDefault(color = "black") {
   // 16x16=265 => i must be defined this way so the squares take all the space
+  // replaceChildren clears every existing div
   divContainer.replaceChildren();
   for (let i = 0; i < 256; i++) {
     let div = document.createElement("div");
@@ -51,16 +52,35 @@ function setThirtytwo(color = "black") {
     div.addEventListener("mouseover", () => {
       div.setAttribute(
         "style",
-        `background-color: ${color};;width:12.5px; height:12.5px;`
+        `background-color: ${color};width:12.5px; height:12.5px;`
       );
     });
     divContainer.appendChild(div);
   }
 }
 
-function setRGB() {
-  let color = getRandomColor();
-  return color;
+function setDark(res) {
+  let divs = document.querySelectorAll("#sketch > div");
+  for (let i = 0; i < divs.length; i++) {
+    divs[i].addEventListener("mouseover", () => {
+      divs[i].setAttribute(
+        "style",
+        `background-color: black; width:${res}; height:${res};`
+      );
+    });
+  }
+}
+
+function setRGB(res) {
+  let divs = document.querySelectorAll("#sketch > div");
+  for (let i = 0; i < divs.length; i++) {
+    divs[i].addEventListener("mouseover", () => {
+      divs[i].setAttribute(
+        "style",
+        `background-color: ${getRandomColor()}; width:${res}; height:${res};`
+      );
+    });
+  }
 }
 
 function getRandomColor() {
@@ -91,10 +111,14 @@ thirdButton.addEventListener("click", () => {
   setThirtytwo();
 });
 
-blackButton.addEventListener("click", () => {});
+blackButton.addEventListener("click", () => {
+  let res = document.querySelector("#sketch > div").style.width;
+  setDark(res);
+});
 
 rbgButton.addEventListener("click", () => {
-  setDefault(setRGB());
+  let res = document.querySelector("#sketch > div").style.width;
+  setRGB(res);
 });
 
 clearButton.addEventListener("click", () => {
